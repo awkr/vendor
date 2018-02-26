@@ -54,7 +54,7 @@ const generatedCodeVersion = 4
 // relative to the import_prefix of the generator.Generator.
 const (
 	contextPkgPath = "golang.org/x/net/context"
-	swcPkgPath     = "github.com/solarwalker/base/context"
+	swcPkgPath     = "github.com/solarwalker/kit/context"
 	grpcPkgPath    = "google.golang.org/grpc"
 )
 
@@ -142,7 +142,7 @@ func (g *grpc) GenerateImports(file *generator.FileDescriptor) {
 
 // reservedClientName records whether a client name is reserved on the client side.
 var reservedClientName = map[string]bool{
-// TODO: do we need any in gRPC?
+	// TODO: do we need any in gRPC?
 }
 
 func unexport(s string) string { return strings.ToLower(s[:1]) + s[1:] }

@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	contextPkgPath = "github.com/solarwalker/base/context"
+	contextPkgPath = "github.com/solarwalker/kit/context"
 )
 
 func init() {
