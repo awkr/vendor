@@ -25,6 +25,10 @@ func MgoSetup(config *db.MongoConfig) {
     mgoInstances = db.MustNewMgoSessions(config)
 }
 
+func GetCol(col string) (*mgo.Session, *mgo.Collection) {
+    return getCol("{{.DbName}}", col)
+}
+
 func getCol(dbName, col string) (*mgo.Session, *mgo.Collection) {
     i := atomic.AddUint32(&mgoInstanceIndex, 1)
 	i = i % uint32(len(mgoInstances))
