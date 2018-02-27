@@ -25,8 +25,12 @@ func MgoSetup(config *db.MongoConfig) {
     mgoInstances = db.MustNewMgoSessions(config)
 }
 
-func GetCol(col string) (*mgo.Session, *mgo.Collection) {
+func Col(col string) (*mgo.Session, *mgo.Collection) {
     return getCol("{{.DbName}}", col)
+}
+
+func DbName() string {
+    return "{{.DbName}}"
 }
 
 func getCol(dbName, col string) (*mgo.Session, *mgo.Collection) {
